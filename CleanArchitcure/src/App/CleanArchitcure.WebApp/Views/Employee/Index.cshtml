@@ -1,0 +1,44 @@
+﻿@model IEnumerable<CleanArchitcure.Application.ModelVm.EmployeeVm>
+@{
+    int id = 1;
+}
+
+<a class="btn btn-dark" asp-action="CreateOrEdit" asp-controller="Employee">Input</a>
+
+
+    <table class="table table-responsive table-bordered table-dark ">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Action</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Email</td>
+                    <td>@item.Phone</td>
+                    <td>@item.Address</td>
+                    <td>
+                    <a class="btn btn-success" asp-action="CreateOrEdit" asp-controller="Employee" asp-route-id="@item.Id">Edit</a>
+
+                    <a class="btn btn-danger" asp-action="Deleted" asp-controller="Employee" asp-route-id="@item.Id" onclick="return alert('delted this data')">Delted</a>
+
+                    <a class="btn btn-success" asp-action="Details" asp-controller="Employee" asp-route-id="@item.Id">Details</a>
+                        
+                    </td>
+                </tr>
+                id++;
+       
+            }
+
+        </tbody>
+    </table>

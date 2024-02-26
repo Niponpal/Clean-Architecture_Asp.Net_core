@@ -1,0 +1,28 @@
+﻿@model CleanArchitcure.Application.ModelVm.EmployeeVm
+@{
+
+}
+
+<form asp-action="CreateOrEdit" asp-controller="Employee" method="post">
+	<div class="mt-3">
+		<label>Enter Your Name</label>
+		<input asp-for="Name" class="form-control" placeholder="Enter Your Name" />
+		
+	</div>
+	<div class="mt-3">
+		<label>Enter Your Email</label>
+		<input asp-for="Email" class="form-control" placeholder="Enter Your Email" />
+
+	</div>
+	<div class="mt-3">
+		<label>Enter Your Age</label>
+		<input asp-for="Phone" class="form-control" placeholder="Enter Your Phone" />
+
+	</div>
+	<div class="mt-3">
+		<label>Enter Your Address</label>
+		<input asp-for="Address" class="form-control" placeholder="Enter Your Address" />
+	</div>
+
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
